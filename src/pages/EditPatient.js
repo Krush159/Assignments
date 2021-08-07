@@ -40,10 +40,11 @@ import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(1),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        padding: theme.spacing(3)
     },
     avatar: {
         margin: theme.spacing(1),
@@ -278,7 +279,7 @@ function EditPatient(props) {
                                         <Form className={classes.form}>
                                             <Grid container spacing={2}>
                                                 <Grid item xs={3}>
-                                                    <Paper className={classes.paper}>
+                                                    <Paper className={classes.paper} style={{height:"80vh"}}>
                                                         <input
                                                             accept="image/*"
                                                             className={classes.inputImage}
@@ -318,6 +319,9 @@ function EditPatient(props) {
                                                 <Grid item xs={9}>
                                                     <Paper className={classes.paper}>
                                                         <Grid container spacing={1}>
+                                                        <Grid item xs={12}>
+                                                            <h4 style={{color:"pink", textAlign:"left"}}> 1. Primary Details</h4>
+                                                        </Grid>
                                                             <Grid item xs={12}>
                                                                 <Grid container spacing={2}>
                                                                     <Grid item xs={2} style={{ textAlign: "left" }}>
@@ -326,7 +330,7 @@ function EditPatient(props) {
                                                                     <Grid item xs={3}>
                                                                         <TextField
                                                                             error={errors.firstName && touched.firstName}
-                                                                            variant="outlined"
+                                                                            variant="filled"
                                                                             margin="dense"
                                                                             required
                                                                             fullWidth
@@ -347,7 +351,7 @@ function EditPatient(props) {
                                                                     <Grid item xs={3}>
                                                                         <TextField
                                                                             error={errors.lastName && touched.lastName}
-                                                                            variant="outlined"
+                                                                            variant="filled"
                                                                             margin="dense"
                                                                             fullWidth
                                                                             id="lastName"
@@ -393,6 +397,7 @@ function EditPatient(props) {
                                                                             <KeyboardDatePicker
                                                                                 autoOk
                                                                                 variant="inline"
+                                                                                inputVariant="filled"
                                                                                 value={values.dob}
                                                                                 onChange={value => setFieldValue("dob", value)}
                                                                                 helperText={
@@ -436,7 +441,7 @@ function EditPatient(props) {
                                                                             error={errors.selectOccupation && touched.selectOccupation}
                                                                             id="selectOccupation"
                                                                             select
-                                                                            variant="outlined"
+                                                                            variant="filled"
                                                                             margin="dense"
                                                                             className={classes.textField}
                                                                             value={values.selectOccupation}
@@ -467,7 +472,7 @@ function EditPatient(props) {
                                                                     <Grid item xs={4}>
                                                                         <TextField
                                                                             error={errors.mobileNo && touched.mobileNo}
-                                                                            variant="outlined"
+                                                                            variant="filled"
                                                                             margin="dense"
                                                                             required
                                                                             fullWidth
@@ -490,7 +495,7 @@ function EditPatient(props) {
                                                                     <Grid item xs={4}>
                                                                         <TextField
                                                                             error={errors.email && touched.email}
-                                                                            variant="outlined"
+                                                                            variant="filled"
                                                                             margin="dense"
                                                                             required
                                                                             fullWidth
@@ -510,6 +515,9 @@ function EditPatient(props) {
                                                                 </Grid>
                                                             </Grid>
                                                             <Grid item xs={12}>
+                                                                <h4 style={{color:"pink", textAlign:"left"}}> 1. Secondatry Details</h4>
+                                                            </Grid>
+                                                            <Grid item xs={12}>
                                                                 <Grid container spacing={2}>
                                                                     <Grid item xs={12}>
                                                                         <FormControlLabel
@@ -524,7 +532,7 @@ function EditPatient(props) {
                                                                             <Grid item xs={12}>
                                                                                 <TextField
                                                                                     error={errors.temporaryAddressLine1 && touched.temporaryAddressLine1}
-                                                                                    variant="outlined"
+                                                                                    variant="filled"
                                                                                     margin="dense"
                                                                                     required
                                                                                     fullWidth
@@ -544,7 +552,7 @@ function EditPatient(props) {
                                                                             <Grid item xs={12}>
                                                                                 <TextField
                                                                                     error={errors.temporaryAddressLine2 && touched.temporaryAddressLine2}
-                                                                                    variant="outlined"
+                                                                                    variant="filled"
                                                                                     margin="dense"
                                                                                     fullWidth
                                                                                     id="temporaryAddressLine2"
@@ -570,7 +578,7 @@ function EditPatient(props) {
                                                                             <Grid item xs={12}>
                                                                                 <TextField
                                                                                     error={errors.permanentAddressLine1 && touched.permanentAddressLine1}
-                                                                                    variant="outlined"
+                                                                                    variant="filled"
                                                                                     margin="dense"
                                                                                     required
                                                                                     fullWidth
@@ -596,7 +604,7 @@ function EditPatient(props) {
                                                                             <Grid item xs={12}>
                                                                                 <TextField
                                                                                     error={errors.permanentAddressLine2 && touched.permanentAddressLine2}
-                                                                                    variant="outlined"
+                                                                                    variant="filled"
                                                                                     margin="dense"
                                                                                     fullWidth
                                                                                     id="permanentAddressLine2"
